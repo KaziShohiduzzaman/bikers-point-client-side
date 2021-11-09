@@ -1,0 +1,34 @@
+.footer-bg{
+    background-color: black;
+    color: white;
+    /* padding: 20px; */
+}
+.footer-section{
+    margin-top: 50px;
+}
+.footer-section h2{
+    color: #622CED;
+}
+.icon-color{
+    color:#622CED ;
+}
+.footer-link{
+    text-decoration: none;
+    color: white;
+}
+.img-sized{
+    height: 100px;
+}
+.footer-font-style{
+    font-family: 'Lobster', cursive;
+    font-size: 20px;
+}
+.footer-set{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer-set img{
+    height: 70px;
+}
+

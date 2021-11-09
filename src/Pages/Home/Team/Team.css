@@ -1,0 +1,25 @@
+.team-img{
+    height: 200px;
+    width: 200px;
+    display: block;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid #EFCF4F;
+    transition: 0.25s;
+    
+}
+.img-hover:hover .team-img{
+    border: 8px solid #EFCF4F;
+}
+.img-hover{
+    padding: 10px;
+    border-radius: 20px;
+}
+/* Media query for small device  */
+@media only screen and (max-width: 600px) {
+    .team-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
