@@ -1,0 +1,24 @@
+.header-text-booking span{
+    font-size: 50px;
+    font-weight: bold;
+    color: #6610f2;
+}
+.header-text-booking{
+  font-size: 20px;
+    /* font-weight: bold; */
+}
+.input-place{
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+   padding: 5px 30px;
+
+}
+.btn-submit{
+    padding: 10px 50px;
+    background-color: #6610f2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px 0px 20px 0px ;
+}

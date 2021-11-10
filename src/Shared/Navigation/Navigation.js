@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import logo from '../../Images/logo.png'
 import './Navigation.css'
-import { Typography } from '@mui/material';
 const Navigation = () => {
     const { user, logOut } = useAuth()
     return (

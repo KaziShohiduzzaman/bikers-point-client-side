@@ -1,13 +1,13 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
-import Collections from './Collections/Collections';
+import AllProducts from './AllProducts/AllProducts';
 
 const AllCollection = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <Collections></Collections>
+            <AllProducts></AllProducts>
             <Footer></Footer>
         </div>
     );

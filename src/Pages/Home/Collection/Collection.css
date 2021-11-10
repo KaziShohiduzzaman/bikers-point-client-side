@@ -1,0 +1,13 @@
+.hover-card{
+    transition: 0.25s;
+}
+.hover-card:hover{
+    box-shadow: 0px 0px 10px 10px gray;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .img-size{
+        height: 250px;
+    }
+}

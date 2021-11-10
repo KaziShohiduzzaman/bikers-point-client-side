@@ -12,6 +12,7 @@ import NotFoundPage from './Pages/NotFoundPage/NotFoundPage';
 import AuthProvider from './contexts/AuthProvider';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
+import Purchase from './Pages/Purchase/Purchase';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route path="/dashboard">
               <Dashboard />
+            </Route>
+            <Route path="/purchase/:Id">
+              <Purchase></Purchase>
             </Route>
             <Route path="/login">
               <Login />
