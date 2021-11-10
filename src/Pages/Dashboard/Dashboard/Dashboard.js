@@ -11,7 +11,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {
     Switch,
-    Route,
     Link,
     useRouteMatch
 } from "react-router-dom";
@@ -26,14 +25,14 @@ import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import useAuth from '../../../hooks/useAuth';
 import PrivateRoute from '../../Login/PrivateRoute/PrivateRoute';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
-    const { logOut, user } = useAuth()
+    const { logOut, user, admin } = useAuth()
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-
     let { path, url } = useRouteMatch();
 
     const handleDrawerToggle = () => {
@@ -46,19 +45,27 @@ function Dashboard(props) {
             <Divider />
             <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}`}><Button color="inherit">Dashboard Home</Button></Link>
 
-            <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/payment`}><Button color="inherit">Payment</Button></Link>
+            {
+                admin || <Box>
+                    <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/payment`}><Button color="inherit">Payment</Button></Link>
 
-            <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/myOrders`}><Button color="inherit">My Orders</Button></Link>
+                    <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/myOrders`}><Button color="inherit">My Orders</Button></Link>
 
-            <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/review`}><Button color="inherit">Review</Button></Link>
+                    <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/review`}><Button color="inherit">Review</Button></Link>
+                </Box>
+            }
 
-            <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/manageAllOrders`}><Button color="inherit">Manage All Orders</Button></Link>
+            {
+                admin && <Box>
+                    <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/manageAllOrders`}><Button color="inherit">Manage All Orders</Button></Link>
 
-            <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
+                    <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/addProduct`}><Button color="inherit">Add Product</Button></Link>
 
-            <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
+                    <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/makeAdmin`}><Button color="inherit">Make Admin</Button></Link>
 
-            <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/manageProducts`}><Button color="inherit">Manage Products</Button></Link>
+                    <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/manageProducts`}><Button color="inherit">Manage Products</Button></Link>
+                </Box>
+            }
 
             <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to='/home'><span className='ms-2'>Home</span></Link>
 
@@ -147,18 +154,18 @@ function Dashboard(props) {
                     <PrivateRoute path={`${path}/review`}>
                         <Review></Review>
                     </PrivateRoute>
-                    <Route path={`${path}/manageAllOrders`}>
+                    <AdminRoute path={`${path}/manageAllOrders`}>
                         <ManageAllOrders></ManageAllOrders>
-                    </Route>
-                    <Route path={`${path}/addProduct`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addProduct`}>
                         <AddProduct></AddProduct>
-                    </Route>
-                    <Route path={`${path}/makeAdmin`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
-                    </Route>
-                    <Route path={`${path}/manageProducts`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageProducts`}>
                         <ManageProducts></ManageProducts>
-                    </Route>
+                    </AdminRoute>
                 </Switch>
             </Box>
         </Box>
