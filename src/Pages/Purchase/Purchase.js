@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 import './Purchase.css'
 import swal from 'sweetalert';
+import Footer from '../../Shared/Footer/Footer';
 
 
 const Purchase = () => {
@@ -100,6 +101,7 @@ const Purchase = () => {
                     </div>
                 </Container>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

@@ -13,6 +13,7 @@ import AuthProvider from './contexts/AuthProvider';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import Purchase from './Pages/Purchase/Purchase';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -32,9 +33,9 @@ function App() {
             <Route path="/dashboard">
               <Dashboard />
             </Route>
-            <Route path="/purchase/:Id">
+            <PrivateRoute path="/purchase/:Id">
               <Purchase></Purchase>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>

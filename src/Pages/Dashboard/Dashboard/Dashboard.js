@@ -25,6 +25,7 @@ import AddProduct from '../AddProduct/AddProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import useAuth from '../../../hooks/useAuth';
+import PrivateRoute from '../../Login/PrivateRoute/PrivateRoute';
 
 const drawerWidth = 240;
 
@@ -134,18 +135,18 @@ function Dashboard(props) {
             >
                 <Toolbar />
                 <Switch>
-                    <Route exact path={path}>
+                    <PrivateRoute exact path={path}>
                         <DashboardHome></DashboardHome>
-                    </Route>
-                    <Route path={`${path}/payment`}>
+                    </PrivateRoute>
+                    <PrivateRoute path={`${path}/payment`}>
                         <Payment></Payment>
-                    </Route>
-                    <Route path={`${path}/myOrders`}>
+                    </PrivateRoute>
+                    <PrivateRoute path={`${path}/myOrders`}>
                         <MyOrders></MyOrders>
-                    </Route>
-                    <Route path={`${path}/review`}>
+                    </PrivateRoute>
+                    <PrivateRoute path={`${path}/review`}>
                         <Review></Review>
-                    </Route>
+                    </PrivateRoute>
                     <Route path={`${path}/manageAllOrders`}>
                         <ManageAllOrders></ManageAllOrders>
                     </Route>

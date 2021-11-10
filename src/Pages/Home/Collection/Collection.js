@@ -15,7 +15,7 @@ const Collection = ({ product }) => {
                     </Card.Text>
                     <Card.Title>Price: {price} Lakhs</Card.Title>
                     <Link className='text-decoration-none' to={`/purchase/${_id}`}>
-                        <button>Purchase</button>
+                        <button className='btn btn-success d-block mx-auto'>Purchase</button>
                     </Link>
                 </Card.Body>
             </Card>
