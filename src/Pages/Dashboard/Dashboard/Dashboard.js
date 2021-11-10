@@ -24,10 +24,12 @@ import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
 import AddProduct from '../AddProduct/AddProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import ManageProducts from '../ManageProducts/ManageProducts';
+import useAuth from '../../../hooks/useAuth';
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
+    const { logOut, user } = useAuth()
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -59,8 +61,11 @@ function Dashboard(props) {
 
             <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to='/home'><span className='ms-2'>Home</span></Link>
 
-            <Button variant="text" style={{ marginLeft: '20px', padding: '10px , 15px', backgroundColor: 'red', color: 'white' }}>Logout</Button>
-
+            <Button onClick={logOut} variant="text" style={{ marginLeft: '20px', padding: '10px , 15px', backgroundColor: 'red', color: 'white' }}>Logout</Button>
+            {
+                user?.email &&
+                <p style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to='/home'><span className='ms-2'>User : {user?.displayName}</span></p>
+            }
         </div>
     );
 
