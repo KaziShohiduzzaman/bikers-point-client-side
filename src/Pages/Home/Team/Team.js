@@ -1,7 +1,6 @@
 import React from 'react';
 import './Team.css'
 import { Card, CardGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 const Team = () => {
     return (
         <div className='my-5 animate__animated animate__zoomInDown container'>

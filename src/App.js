@@ -3,12 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
 import AllCollection from './Pages/AllCollection/AllCollection';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import NotFoundPage from './Pages/NotFoundPage/NotFoundPage';
 
 function App() {
   return (
@@ -26,6 +26,9 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <Dashboard />
+          </Route>
+          <Route path="*">
+            <NotFoundPage />
           </Route>
         </Switch>
       </Router>

@@ -5,7 +5,7 @@ import logo from '../../Images/logo.png'
 import './Navigation.css'
 const Navigation = () => {
     return (
-        <Navbar bg="light" expand="lg" className='px-5'>
+        <Navbar bg="light" expand="lg" className='px-5' sticky="top">
             <Container fluid>
                 <Navbar.Brand href="/">
                     <img className='img-fluid logo-size me-3' src={logo} alt="" />
