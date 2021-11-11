@@ -27,6 +27,7 @@ import useAuth from '../../../hooks/useAuth';
 import PrivateRoute from '../../Login/PrivateRoute/PrivateRoute';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
+
 const drawerWidth = 240;
 
 function Dashboard(props) {
@@ -43,6 +44,8 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
+            <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to='/home'><span className='ms-2'>Home</span></Link>
+
             <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}`}><Button color="inherit">Dashboard Home</Button></Link>
 
             {
@@ -66,8 +69,6 @@ function Dashboard(props) {
                     <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}/manageProducts`}><Button color="inherit">Manage Products</Button></Link>
                 </Box>
             }
-
-            <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to='/home'><span className='ms-2'>Home</span></Link>
 
             <Button onClick={logOut} variant="text" style={{ marginLeft: '20px', padding: '10px , 15px', backgroundColor: 'red', color: 'white' }}>Logout</Button>
             {

@@ -14,7 +14,7 @@ const MyOrders = () => {
         fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
+    }, [products, user?.email, setMatchProducts])
     useEffect(() => {
         setMatchProducts(products.filter(event => event.userEmail === user?.email))
     }, [products, user?.email, setMatchProducts])

@@ -66,7 +66,6 @@ const Purchase = () => {
                         icon: "success",
                         button: "Aww yes!",
                     });
-                    // setEvent({});
                     e.target.reset();
                 }
             })
@@ -84,7 +83,7 @@ const Purchase = () => {
 
                 <Container>
                     <div className='mb-5'>
-                        <h3 className='text-center p-4 text-color-services'>Registration</h3>
+                        <h2 className='text-center p-4 text-color-services'>Purchase Info</h2>
                         <form onSubmit={handleSubmit}>
                             <input className='input-place' ref={refUserName} type="text" placeholder="Name" value={user.displayName || ''} />
 
@@ -96,7 +95,7 @@ const Purchase = () => {
 
                             <input className='input-place' onChange={handleColorChange} type="text" placeholder='Colour' />
 
-                            <input className='input-place btn-submit' type="submit" value="Register" />
+                            <input className='input-place btn-submit' type="submit" value="Purchase" />
                         </form>
                     </div>
                 </Container>

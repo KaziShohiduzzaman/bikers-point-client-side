@@ -1,9 +1,13 @@
 import React from 'react';
 import './Team.css'
 import { Card, CardGroup } from 'react-bootstrap';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const Team = () => {
     return (
-        <div className='my-5 animate__animated animate__zoomInDown container'>
+        <div className='my-5' data-aos="fade-up">
             <h1 className='text-center m-3 card-h1'>Meet Our Team</h1>
             {/* team card  */}
             <CardGroup className='team-container'>

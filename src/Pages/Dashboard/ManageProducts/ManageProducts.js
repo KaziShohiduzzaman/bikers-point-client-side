@@ -1,9 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Row } from 'react-bootstrap';
+import swal from 'sweetalert';
+import Products from './Products/Products';
 
 const ManageProducts = () => {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/allProducts')
+            .then(res => res.json())
+            .then(result => setProducts(result))
+    }, [])
+
+    //delete or cancel a tour
+    const handleDeleteProduct = id => {
+        swal({
+            title: "Are you sure?",
+            text: "Once delete, you will not be able to recover this Product!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("This product has been canceled", {
+                        icon: "success",
+                    });
+                    const url = `http://localhost:5000/products/${id}`;
+                    fetch(url, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount) {
+                                const remainingUsers = products.filter(product => product._id !== id);
+                                setProducts(remainingUsers);
+                            }
+                        })
+
+                } else {
+                    swal("This product is safe");
+                }
+            });
+    }
     return (
-        <div>
-            <h1>Manage Products</h1>
+        <div className='container my-4'>
+            <div>
+                <h1 className='text-center'>Manage All Orders</h1>
+                {
+                    products.length ?
+                        <Row xs={1} md={2} className="g-4 my-3">
+                            {
+                                products.map(product => <Products key={product._id} product={product} handleDeleteProduct={handleDeleteProduct}></Products>)
+                            }
+                        </Row>
+                        :
+                        <h3 className="text-danger text-center">Empty</h3>
+                }
+            </div>
         </div>
     );
 };
