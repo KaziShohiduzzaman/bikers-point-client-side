@@ -1,19 +1,19 @@
 .team-img{
-    height: 200px;
-    width: 200px;
-    display: block;
-    margin: auto;
-    padding: 10px;
-    border: 2px solid #EFCF4F;
-    transition: 0.25s;
+    height: 200px !important;
+    width: 200px !important;
+    display: block !important;
+    margin: auto !important;
+    padding: 10px !important;
+    border: 2px solid green !important;
+    transition: 0.25s !important;
     
 }
 .img-hover:hover .team-img{
-    border: 8px solid #EFCF4F;
+    border: 8px solid green !important;
 }
 .img-hover{
-    padding: 10px;
-    border-radius: 20px;
+    padding: 10px !important;
+    border-radius: 20px !important;
 }
 /* Media query for small device  */
 @media only screen and (max-width: 600px) {

@@ -7,7 +7,7 @@ AOS.init();
 
 const Team = () => {
     return (
-        <div className='my-5' data-aos="fade-up">
+        <div className='my-5 container' data-aos="fade-up">
             <h1 className='text-center m-3 card-h1'>Meet Our Team</h1>
             {/* team card  */}
             <CardGroup className='team-container'>
@@ -18,7 +18,7 @@ const Team = () => {
                         <Card.Text>
                             Manager
                         </Card.Text>
-                        <button className='btn btn-warning'>Details</button>
+                        <button className='btn btn-success'>Details</button>
                     </Card.Body>
 
                 </Card>
@@ -29,7 +29,7 @@ const Team = () => {
                         <Card.Text>
                             Social Media Manager
                         </Card.Text>
-                        <button className='btn btn-warning'>Details</button>
+                        <button className='btn btn-success'>Details</button>
                     </Card.Body>
 
                 </Card>
@@ -40,7 +40,7 @@ const Team = () => {
                         <Card.Text>
                             Managing Director
                         </Card.Text>
-                        <button className='btn btn-warning'>Details</button>
+                        <button className='btn btn-success'>Details</button>
                     </Card.Body>
 
                 </Card>
@@ -51,7 +51,7 @@ const Team = () => {
                         <Card.Text>
                             Investor
                         </Card.Text>
-                        <button className='btn btn-warning'>Details</button>
+                        <button className='btn btn-success'>Details</button>
                     </Card.Body>
 
                 </Card>

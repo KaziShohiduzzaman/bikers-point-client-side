@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import swal from 'sweetalert';
 import Products from './Products/Products';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
@@ -43,7 +46,7 @@ const ManageProducts = () => {
             });
     }
     return (
-        <div className='container my-4'>
+        <div className='container my-4' data-aos="fade-right">
             <div>
                 <h1 className='text-center'>Manage All Orders</h1>
                 {

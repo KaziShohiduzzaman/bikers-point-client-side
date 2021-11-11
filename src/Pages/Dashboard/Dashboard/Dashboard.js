@@ -26,6 +26,10 @@ import ManageProducts from '../ManageProducts/ManageProducts';
 import useAuth from '../../../hooks/useAuth';
 import PrivateRoute from '../../Login/PrivateRoute/PrivateRoute';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 
 
 const drawerWidth = 240;
@@ -41,12 +45,11 @@ function Dashboard(props) {
     };
 
     const drawer = (
-        <div>
+        <div data-aos="fade-up">
             <Toolbar />
             <Divider />
             <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to='/home'><span className='ms-2'>Home</span></Link>
 
-            <Link style={{ textDecoration: 'none', display: 'block', backgroundColor: 'black', color: 'white', margin: '10px', padding: '10px', borderRadius: '5px' }} to={`${url}`}><Button color="inherit">Dashboard Home</Button></Link>
 
             {
                 admin || <Box>

@@ -1,11 +1,14 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const DashboardHome = () => {
     return (
         <div>
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1 }} data-aos="fade-right">
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
                         <img className='container' src="https://www.wallpaperup.com/uploads/wallpapers/2018/02/04/1201770/f4cf92435e39fc9ef58f1f58fbb55d5c-700.jpg" alt="" />

@@ -9,11 +9,11 @@ import './Navigation.css'
 const Navigation = () => {
     const { user, logOut } = useAuth()
     return (
-        <Navbar bg="light" expand="lg" className='px-5' sticky="top">
+        <Navbar bg="light" expand="lg" className='px-5 shadow-lg' sticky="top">
             <Container fluid>
                 <Navbar.Brand href="/">
                     <img className='img-fluid logo-size me-3' src={logo} alt="" />
-                    Bike Wala</Navbar.Brand>
+                    <span className='fw-bold'>Bike Wala</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -31,7 +31,8 @@ const Navigation = () => {
                                     <Link style={{ textDecoration: 'none', color: 'white' }} to="/dashboard"><Button variant="text">Dashboard</Button></Link>
 
                                     <Button onClick={logOut} variant="outlined" color="error">Logout</Button>
-                                    <Button style={{ marginLeft: '10px' }} variant="outlined" color="success">
+
+                                    <Button className='res-btn' style={{ marginLeft: '10px' }} variant="outlined" color="success">
                                         {user?.displayName}
                                     </Button>
                                 </Box>

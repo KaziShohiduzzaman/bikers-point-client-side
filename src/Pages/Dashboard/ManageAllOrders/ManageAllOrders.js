@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import AllOrders from './AllOrders/AllOrders';
 import swal from 'sweetalert';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
@@ -66,7 +70,8 @@ const ManageAllOrders = () => {
             })
     }
     return (
-        <div className='container my-4'>
+        <div className='container my-4' data-aos="fade-right"
+        >
             <div>
                 <h1 className='text-center p-4 text-color-services'>Manage All Orders</h1>
                 {

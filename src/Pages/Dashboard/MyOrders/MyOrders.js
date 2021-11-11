@@ -3,6 +3,11 @@ import { Row, Spinner } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import MyOrder from './MyOrder/MyOrder';
 import swal from 'sweetalert';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
+
 
 const MyOrders = () => {
     const { user } = useAuth();
@@ -50,7 +55,7 @@ const MyOrders = () => {
             });
     }
     return (
-        <div className="container">
+        <div className="container" data-aos="fade-right">
             <div>
                 <h1 class="text-center p-4">My Order</h1>
                 {matchProducts.length ?

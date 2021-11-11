@@ -2,6 +2,9 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import './AddProduct.css'
 import swal from 'sweetalert';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -27,7 +30,7 @@ const AddProduct = () => {
             })
     };
     return (
-        <div>
+        <div data-aos="fade-right">
             <h1 className='text-center p-4 text-color-services text-success'>Add a Product</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="input-main my-4">
                 <input className='inputStyle' {...register("name")} placeholder="Enter Bike Name" />

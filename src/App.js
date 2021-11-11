@@ -1,5 +1,4 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +13,8 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import Purchase from './Pages/Purchase/Purchase';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (

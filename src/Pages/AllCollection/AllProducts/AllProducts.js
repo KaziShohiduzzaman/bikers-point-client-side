@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import Products from '../Products/Products';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const AllProducts = () => {
     const [products, setProducts] = useState([])
@@ -11,12 +14,21 @@ const AllProducts = () => {
     }, [])
     return (
         <div className='container'>
-            <h1 className='text-center my-5'>Our Bike Collection</h1>
-            <Row xs={1} md={3} className="g-4">
-                {
-                    products.map(product => <Products key={product._key} product={product}></Products>)
-                }
-            </Row>
+            {
+                products?.length ?
+                    <div>
+                        <h1 className='text-center my-5'>Our Bike Collection</h1>
+                        <Row xs={1} md={3} className="g-4" data-aos="fade-down-left">
+                            {
+                                products.map(product => <Products key={product._key} product={product}></Products>)
+                            }
+                        </Row>
+                    </div>
+                    :
+                    <Spinner className='d-block mx-auto my-5' animation="border" />
+
+            }
+
         </div>
     );
 };

@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Alert from '@mui/material/Alert';
 import { useForm } from "react-hook-form";
 import './Review.css'
 import useAuth from '../../../hooks/useAuth';
 import swal from 'sweetalert';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 
 
 const Review = () => {
     const { user } = useAuth();
     const name = user?.displayName;
     const image = user?.photoURL;
-    // const [rating, setRating] = useState({})
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = data => {
         data.name = name;
         data.reviewImage = image;
@@ -27,11 +30,12 @@ const Review = () => {
             .then(result => {
                 if (result.insertedId) {
                     swal({
-                        title: "Order Placed",
-                        text: "Successfully you added your order",
+                        title: "Review Submitted",
+                        text: "Successfully you give your Feedback..",
                         icon: "success",
-                        button: "Aww yes!",
+                        button: "Done",
                     });
+                    reset();
                 }
             })
     };
@@ -39,11 +43,11 @@ const Review = () => {
     console.log(user);
 
     return (
-        <div>
-            <h1 className='text-center mb-5 text-decoration-underline text-success'>Review</h1>
+        <div data-aos="fade-right">
+            <h1 className='text-center mb-5 text-decoration-underline text-success'>Give Your Feedback</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <textarea {...register("comment", { required: true })} placeholder="Write about Our Service" className="d-block mx-auto textarea-input" />
-                <select {...register("rating")} className="d-block mx-auto inputStyle width-select">
+                <select {...register("responseRate")} className="d-block mx-auto inputStyle width-select">
                     <option value="5">Excellent</option>
                     <option value="4">Very Good</option>
                     <option value="3">Good</option>
