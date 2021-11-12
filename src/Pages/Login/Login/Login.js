@@ -1,5 +1,6 @@
 import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Login.css'
@@ -32,12 +33,20 @@ const Login = () => {
                 <Grid item xs={12} md={6}>
                     <img className='img-none' src='https://upload.wikimedia.org/wikipedia/commons/6/6a/Please_log_in_image.png' style={{ width: '100%', marginTop: '80px' }} alt="" />
                 </Grid>
-                <Grid item sx={{ mt: 8 }} xs={12} md={6}>
+                <Grid item sx={{ mt: 0 }} xs={12} md={6}>
                     <div style={{ marginLeft: '60px' }}>
                         <Typography variant="h1" component="div" gutterBottom>
                             Login
                         </Typography>
+                        {
+                            isLoading && <Spinner className='spinner-style' animation="border" />
+                        }
+                        {user?.email && <Alert severity="success">Successfully Login</Alert>
+                        }
+                        {authError && <Alert severity="error">{authError}</Alert>
+                        }
                         <form onSubmit={handleLoginSubmit}>
+
                             <TextField
                                 sx={{ width: '75%', m: 1 }}
                                 id="standard-basic"
@@ -65,13 +74,6 @@ const Login = () => {
                             <Link style={{ textDecoration: 'none' }} to='/register'>
                                 <Button className='text-success' variant="text">New User? Please Register</Button>
                             </Link>
-                            {
-                                isLoading && <CircularProgress />
-                            }
-                            {user?.email && <Alert severity="success">Successfully Login</Alert>
-                            }
-                            {authError && <Alert severity="error">{authError}</Alert>
-                            }
                         </form>
                         <button onClick={handleGoogleSignIn} className='btn btn-success w-75 ms-2' style={{}}><i className="fab fa-google me-1"></i>Sign In</button>
                     </div>
