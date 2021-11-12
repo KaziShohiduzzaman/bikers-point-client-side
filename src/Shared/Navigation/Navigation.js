@@ -9,10 +9,10 @@ import './Navigation.css'
 const Navigation = () => {
     const { user, logOut } = useAuth()
     return (
-        <Navbar bg="light" expand="lg" className='px-5 shadow-lg' sticky="top">
+        <Navbar bg="light" expand="lg" className='container-navbar shadow-lg' sticky="top">
             <Container fluid>
                 <Navbar.Brand href="/">
-                    <img className='img-fluid logo-size me-3' src={logo} alt="" />
+                    <img className='img-fluid logo-size me-1' src={logo} alt="" />
                     <span className='fw-bold'>Bikers Point</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
