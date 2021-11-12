@@ -95,7 +95,7 @@ const Purchase = () => {
 
                             <input className='input-place' onChange={handleColorChange} type="text" placeholder='Colour' />
 
-                            <input className='input-place btn-submit' type="submit" value="Purchase" />
+                            <input className='input-place btn btn-success' type="submit" value="Purchase" />
                         </form>
                     </div>
                 </Container>

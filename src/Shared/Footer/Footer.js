@@ -33,7 +33,7 @@ const Footer = () => {
                 </Row>
             </Container>
             <div className='py-3 text-white text-center footer-set footer-color'>
-                <p className='text-white mt-2'>All credit<span className='text-warning'> &copy; Kazi Shohiduzzaman</span></p>
+                <p className='mt-2 text-warning'> &copy; Kazi Shohiduzzaman</p>
                 <span className='fw-bold'>
                     <img className='img-fluid logo-size me-2' src={logo2} alt="" />
                     Bikers Point
