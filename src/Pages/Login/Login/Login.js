@@ -73,7 +73,7 @@ const Login = () => {
                             {authError && <Alert severity="error">{authError}</Alert>
                             }
                         </form>
-                        <button onClick={handleGoogleSignIn} className='btn btn-success w-75 ms-2' style={{}}><i class="fab fa-google me-1"></i>Sign In</button>
+                        <button onClick={handleGoogleSignIn} className='btn btn-success w-75 ms-2' style={{}}><i className="fab fa-google me-1"></i>Sign In</button>
                     </div>
                 </Grid>
             </Grid>

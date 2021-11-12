@@ -12,7 +12,7 @@ const ManageAllOrders = () => {
     const [status, setStatus] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://vast-shore-61104.herokuapp.com/orders')
             .then(res => res.json())
             .then(result => setOrders(result))
     }, [status, orders, setOrders])
@@ -31,7 +31,7 @@ const ManageAllOrders = () => {
                     swal("This product has been canceled", {
                         icon: "success",
                     });
-                    const url = `http://localhost:5000/orders/${id}`;
+                    const url = `https://vast-shore-61104.herokuapp.com/orders/${id}`;
                     fetch(url, {
                         method: 'DELETE'
                     })
@@ -51,7 +51,7 @@ const ManageAllOrders = () => {
     // Update status 
     const handleStatus = id => {
         setStatus(!status);
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://vast-shore-61104.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

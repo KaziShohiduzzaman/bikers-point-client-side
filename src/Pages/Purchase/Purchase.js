@@ -18,7 +18,7 @@ const Purchase = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${Id}`;
+        const url = `https://vast-shore-61104.herokuapp.com/products/${Id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setEvent(data))
@@ -50,7 +50,7 @@ const Purchase = () => {
         purchase.status = 'pending';
 
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://vast-shore-61104.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

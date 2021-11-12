@@ -19,7 +19,7 @@ const Review = () => {
         data.name = name;
         data.reviewImage = image;
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://vast-shore-61104.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

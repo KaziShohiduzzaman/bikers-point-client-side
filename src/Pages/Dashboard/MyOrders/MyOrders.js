@@ -16,7 +16,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         <Spinner animation="border" />;
-        fetch('http://localhost:5000/orders')
+        fetch('https://vast-shore-61104.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [products, user?.email, setMatchProducts])
@@ -38,7 +38,7 @@ const MyOrders = () => {
                     swal("Successfully Cancel Your order", {
                         icon: "success",
                     });
-                    const url = `http://localhost:5000/orders/${id}`;
+                    const url = `https://vast-shore-61104.herokuapp.com/orders/${id}`;
                     fetch(url, {
                         method: 'DELETE'
                     })
@@ -57,7 +57,7 @@ const MyOrders = () => {
     return (
         <div className="container" data-aos="fade-right">
             <div>
-                <h1 class="text-center p-4">My Order</h1>
+                <h1 className="text-center p-4">My Order</h1>
                 {matchProducts.length ?
                     <Row xs={1} md={3} lg={3} className='gy-4 my-4'>
                         {matchProducts.map(event => <MyOrder key={event._key} event={event} handleDeleteTour={handleDeleteTour}></MyOrder>)}

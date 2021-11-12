@@ -9,7 +9,7 @@ AOS.init();
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allProducts')
+        fetch('https://vast-shore-61104.herokuapp.com/allProducts')
             .then(res => res.json())
             .then(result => setProducts(result))
     }, [])
@@ -28,7 +28,7 @@ const ManageProducts = () => {
                     swal("This product has been canceled", {
                         icon: "success",
                     });
-                    const url = `http://localhost:5000/products/${id}`;
+                    const url = `https://vast-shore-61104.herokuapp.com/products/${id}`;
                     fetch(url, {
                         method: 'DELETE'
                     })
