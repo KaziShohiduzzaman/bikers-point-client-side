@@ -13,7 +13,7 @@ const Navigation = () => {
             <Container fluid>
                 <Navbar.Brand href="/">
                     <img className='img-fluid logo-size me-3' src={logo} alt="" />
-                    <span className='fw-bold'>Bike Wala</span></Navbar.Brand>
+                    <span className='fw-bold'>Bikers Point</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav

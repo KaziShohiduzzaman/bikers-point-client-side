@@ -33,47 +33,48 @@ const Login = () => {
                     <img className='img-none' src='https://upload.wikimedia.org/wikipedia/commons/6/6a/Please_log_in_image.png' style={{ width: '100%', marginTop: '80px' }} alt="" />
                 </Grid>
                 <Grid item sx={{ mt: 8 }} xs={12} md={6}>
-                    <Typography variant="h1" component="div" gutterBottom>
-                        Login
-                    </Typography>
-                    <form onSubmit={handleLoginSubmit}>
-                        <TextField
-                            sx={{ width: '75%', m: 1 }}
-                            id="standard-basic"
-                            label="Your Email"
-                            name='email'
-                            onChange={handleOnChange}
-                            variant="standard" />
-
-                        <TextField
-                            sx={{ width: '75%', m: 1 }}
-                            id="standard-basic"
-                            label="Your Password"
-                            name='password'
-                            onChange={handleOnChange}
-                            variant="standard"
-                            type="password" />
-
-                        <Button
-                            sx={{ width: '75%', m: 1 }}
-                            variant="contained"
-                            color="primary"
-                            type="submit">
+                    <div style={{ marginLeft: '60px' }}>
+                        <Typography variant="h1" component="div" gutterBottom>
                             Login
-                        </Button>
-                        <Link style={{ textDecoration: 'none' }} to='/register'>
-                            <Button variant="text">New User? Please Register</Button>
-                        </Link>
-                        {
-                            isLoading && <CircularProgress />
-                        }
-                        {user?.email && <Alert severity="success">Successfully Login</Alert>
-                        }
-                        {authError && <Alert severity="error">{authError}</Alert>
-                        }
-                    </form>
-                    <p>---------------------------</p>
-                    <Button onClick={handleGoogleSignIn} variant="contained">Google Sign in</Button>
+                        </Typography>
+                        <form onSubmit={handleLoginSubmit}>
+                            <TextField
+                                sx={{ width: '75%', m: 1 }}
+                                id="standard-basic"
+                                label="Your Email"
+                                name='email'
+                                onChange={handleOnChange}
+                                variant="filled" />
+
+                            <TextField
+                                sx={{ width: '75%', m: 1 }}
+                                id="standard-basic"
+                                label="Your Password"
+                                name='password'
+                                onChange={handleOnChange}
+                                variant="filled"
+                                type="password" />
+
+                            <Button
+                                sx={{ width: '75%', m: 1, backgroundColor: 'green' }}
+                                variant="contained"
+                                color="primary"
+                                type="submit">
+                                Login
+                            </Button>
+                            <Link style={{ textDecoration: 'none' }} to='/register'>
+                                <Button className='text-success' variant="text">New User? Please Register</Button>
+                            </Link>
+                            {
+                                isLoading && <CircularProgress />
+                            }
+                            {user?.email && <Alert severity="success">Successfully Login</Alert>
+                            }
+                            {authError && <Alert severity="error">{authError}</Alert>
+                            }
+                        </form>
+                        <button onClick={handleGoogleSignIn} className='btn btn-success w-75 ms-2' style={{}}><i class="fab fa-google me-1"></i>Sign In</button>
+                    </div>
                 </Grid>
             </Grid>
         </Container>

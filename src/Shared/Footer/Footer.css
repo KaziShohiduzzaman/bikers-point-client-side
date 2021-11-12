@@ -1,16 +1,15 @@
 .footer-bg{
-    background-color: black;
+    background-color: #026359; 
     color: white;
-    /* padding: 20px; */
 }
 .footer-section{
     margin-top: 50px;
 }
 .footer-section h2{
-    color: rgb(42, 194, 42);
+    color: white;
 }
 .icon-color{
-    color:rgb(16, 240, 16) ;
+    color:white ;
 }
 .footer-link{
     text-decoration: none;
@@ -30,5 +29,8 @@
 }
 .footer-set img{
     height: 70px;
+}
+.footer-color{
+    background-color: #021f1b;
 }
 

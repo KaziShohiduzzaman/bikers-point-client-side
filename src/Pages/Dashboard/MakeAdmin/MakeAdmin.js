@@ -46,7 +46,7 @@ const MakeAdmin = () => {
                         type="email"
                         variant="outlined" />
 
-                    <Button style={{ marginTop: '10px', marginLeft: '40px' }} type='submit' variant='contained' color='success'>Make Admin</Button>
+                    <Button style={{ marginTop: '10px', marginLeft: '40px', backgroundColor: '#00403a ' }} type='submit' variant='contained'>Make Admin</Button>
                 </div>
             </form>
         </div>

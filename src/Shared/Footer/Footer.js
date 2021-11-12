@@ -32,7 +32,7 @@ const Footer = () => {
                     </Col>
                 </Row>
             </Container>
-            <div className='py-3 text-white text-center footer-set bg-dark'>
+            <div className='py-3 text-white text-center footer-set footer-color'>
                 <p className='text-white mt-2'>All credit goes to <span className='text-white'>Kazi Shohiduzzaman</span></p>
                 <img className='img-fluid img-sized' src={logo2} alt="" />
             </div>

@@ -66,14 +66,14 @@ const Register = () => {
                         type="password" />
 
                     <Button
-                        sx={{ width: '50%', m: 1 }}
+                        sx={{ width: '50%', m: 1, backgroundColor: 'green' }}
                         variant="contained"
                         color="primary"
                         type="submit">
                         Register
                     </Button>
                     <Link style={{ textDecoration: 'none', display: 'block' }} to='/login'>
-                        <Button variant="text">Already Registered? Please Login</Button>
+                        <Button variant="text" color='success'>Already Registered? Please Login</Button>
                     </Link>
                 </form>}
                 {
