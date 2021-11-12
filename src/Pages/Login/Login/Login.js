@@ -41,10 +41,6 @@ const Login = () => {
                         {
                             isLoading && <Spinner className='spinner-style' animation="border" />
                         }
-                        {user?.email && <Alert severity="success">Successfully Login</Alert>
-                        }
-                        {authError && <Alert severity="error">{authError}</Alert>
-                        }
                         <form onSubmit={handleLoginSubmit}>
 
                             <TextField
@@ -76,6 +72,10 @@ const Login = () => {
                             </Link>
                         </form>
                         <button onClick={handleGoogleSignIn} className='btn btn-success w-75 ms-2' style={{}}><i className="fab fa-google me-1"></i>Sign In</button>
+                        {user?.email && <Alert style={{ marginTop: '20px' }} severity="success">Successfully Login</Alert>
+                        }
+                        {authError && <Alert style={{ marginTop: '20px' }} severity="error">{authError}</Alert>
+                        }
                     </div>
                 </Grid>
             </Grid>
